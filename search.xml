@@ -18,6 +18,7 @@
 <p>Vue提供了响应式和组件化的视图组件，响应式指的是网页在移动设备端打开时可以自适应设备屏幕分辨率和尺寸，优化用户体验；组件化指的是<br>将可能重复出现的视图封装成可重复调用的自定义组件。Vue将组件写成.vue文件，并在上层页面中使用标签进行调用（e.g. 程序员写了一个名为<code>co-example.vue</code><br>的组件，调用时使用<code>&lt;co-example&gt;&lt;/co-example&gt;</code>）。Element是基于vue的ui库，说实话当时是随便找的，后来才知道是饿了么的UI，总的来说还不错吧，<br>挺多有用的小组件，颜色主题的想法我也挺喜欢的。不过一定要说的话，有一个小问题就是Layout布局中只有列间距没有行间距的参数。</p>
 <p>这个项目肯定不止用了加密算法的库，只不过信息加密是聊天系统十分重要的一点，所以这两个加密算法库就单独拿出来讲讲。我们使用了Diffie-Hellman密钥交换<br>协议和AES对称加密，其中Crypto是Node.js原生库，我们原计划用它来实现加密的整个流程，只是由于某些尚不清楚的原因，Crypto的AES相关函数无法被找到进行调用，不得以我们<br>又用了另一个加密算法库CryptoJS。又因为CryptoJS只实现了加解密算法，并没有实现Diffie-Hellman，我们最终<br>采用了二者共用的策略。密钥交换协议和对称加密这两者在该项目中缺一不可，具体会在后面提到。<br>Crypto算法库来自<a href="https://github.com/brix/crypto-js" target="_blank" rel="noopener">https://github.com/brix/crypto-js</a></p>
 <p>那么用户聊天内容的私密性就要进行保护。和微信不一样的是，我们的项目更强调端对端的消息加密，<br>也即服务端无法获取用户聊天内容。这个实现起来不难，但加强了隐私性也就牺牲了一定的方便性。</p>
+<p>未完待续。。。</p>
 </li>
 </ul>
 </li>
@@ -56,18 +57,6 @@
 ]]></content>
       <tags>
         <tag>待分类</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git常用命令</title>
-    <url>/2020/04/11/git-learning/</url>
-    <content><![CDATA[<h2 id="本地创建版本库-Create-a-Repository"><a href="#本地创建版本库-Create-a-Repository" class="headerlink" title="本地创建版本库 Create a Repository"></a>本地创建版本库 Create a Repository</h2><p>新建一个空文件夹，在该路径下打开bash并输入命令<code>$ git init</code>，将生成一个.git隐藏文件。</p>
-<h2 id="add-amp-commit"><a href="#add-amp-commit" class="headerlink" title="add&amp;commit"></a>add&amp;commit</h2><p><code>$ git add &lt;file&gt;</code><br><code>$ git commit -m &quot;message&quot;</code></p>
-<h2 id="上传本地版本库到远程"><a href="#上传本地版本库到远程" class="headerlink" title="上传本地版本库到远程"></a>上传本地版本库到远程</h2><p><code>$ git push -u origin master</code></p>
-<h2 id="克隆远程版本库到本地"><a href="#克隆远程版本库到本地" class="headerlink" title="克隆远程版本库到本地"></a>克隆远程版本库到本地</h2><p><code>$git clone &lt;URL&gt;</code></p>
-]]></content>
-      <tags>
-        <tag>常用命令</tag>
       </tags>
   </entry>
   <entry>
@@ -124,6 +113,18 @@
 ]]></content>
       <tags>
         <tag>待分类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git常用命令</title>
+    <url>/2020/04/11/git-learning/</url>
+    <content><![CDATA[<h2 id="本地创建版本库-Create-a-Repository"><a href="#本地创建版本库-Create-a-Repository" class="headerlink" title="本地创建版本库 Create a Repository"></a>本地创建版本库 Create a Repository</h2><p>新建一个空文件夹，在该路径下打开bash并输入命令<code>$ git init</code>，将生成一个.git隐藏文件。</p>
+<h2 id="add-amp-commit"><a href="#add-amp-commit" class="headerlink" title="add&amp;commit"></a>add&amp;commit</h2><p><code>$ git add &lt;file&gt;</code><br><code>$ git commit -m &quot;message&quot;</code></p>
+<h2 id="上传本地版本库到远程"><a href="#上传本地版本库到远程" class="headerlink" title="上传本地版本库到远程"></a>上传本地版本库到远程</h2><p><code>$ git push -u origin master</code></p>
+<h2 id="克隆远程版本库到本地"><a href="#克隆远程版本库到本地" class="headerlink" title="克隆远程版本库到本地"></a>克隆远程版本库到本地</h2><p><code>$git clone &lt;URL&gt;</code></p>
+]]></content>
+      <tags>
+        <tag>常用命令</tag>
       </tags>
   </entry>
   <entry>
