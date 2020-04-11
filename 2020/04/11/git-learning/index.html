@@ -10,8 +10,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     
-    <meta name="description" content="本地创建版本库 Create a Repository新建一个空文件夹，在该路径下打开bash并输入命令$ git init，将生成一个.git隐藏文件。
-add&amp;amp;commit$ git a,"> 
+    <meta name="description" content="以下命令中，origin常用作远程版本库名，master则为主要分支名。
+本地创建版本库 Create a Repository新建一个空文件夹，在该路径下打开bash并输入命令$ git init,"> 
     <meta name="author" content="Lotuny"> 
     <link rel="alternative" href="atom.xml" title="Lotuny&#39;s Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -60,10 +60,19 @@ add&amp;amp;commit$ git a,">
 
         </div>
         <div class="content markdown">
-            <h2 id="本地创建版本库-Create-a-Repository"><a href="#本地创建版本库-Create-a-Repository" class="headerlink" title="本地创建版本库 Create a Repository"></a>本地创建版本库 Create a Repository</h2><p>新建一个空文件夹，在该路径下打开bash并输入命令<code>$ git init</code>，将生成一个.git隐藏文件。</p>
+            <p>以下命令中，<code>origin</code>常用作远程版本库名，<code>master</code>则为主要分支名。</p>
+<h2 id="本地创建版本库-Create-a-Repository"><a href="#本地创建版本库-Create-a-Repository" class="headerlink" title="本地创建版本库 Create a Repository"></a>本地创建版本库 Create a Repository</h2><p>新建一个空文件夹，在该路径下打开bash并输入命令<code>$ git init</code>，将生成一个.git隐藏文件。</p>
 <h2 id="add-amp-commit"><a href="#add-amp-commit" class="headerlink" title="add&amp;commit"></a>add&amp;commit</h2><p><code>$ git add &lt;file&gt;</code><br><code>$ git commit -m &quot;message&quot;</code></p>
-<h2 id="上传本地版本库到远程"><a href="#上传本地版本库到远程" class="headerlink" title="上传本地版本库到远程"></a>上传本地版本库到远程</h2><p><code>$ git push -u origin master</code></p>
-<h2 id="克隆远程版本库到本地"><a href="#克隆远程版本库到本地" class="headerlink" title="克隆远程版本库到本地"></a>克隆远程版本库到本地</h2><p><code>$git clone &lt;URL&gt;</code></p>
+<h2 id="添加远程版本库"><a href="#添加远程版本库" class="headerlink" title="添加远程版本库"></a>添加远程版本库</h2><p><code>$ git remote add orign &lt;URL&gt;</code></p>
+<h2 id="查看关联远程版本库"><a href="#查看关联远程版本库" class="headerlink" title="查看关联远程版本库"></a>查看关联远程版本库</h2><p><code>$ git remote</code></p>
+<h2 id="更新远程版本库版本信息到本地"><a href="#更新远程版本库版本信息到本地" class="headerlink" title="更新远程版本库版本信息到本地"></a>更新远程版本库版本信息到本地</h2><p><code>$ git fetch</code></p>
+<h2 id="同步远程版本库到本地"><a href="#同步远程版本库到本地" class="headerlink" title="同步远程版本库到本地"></a>同步远程版本库到本地</h2><p><code>$ git pull -u origin master</code></p>
+<h2 id="同步本地版本库到远程"><a href="#同步本地版本库到远程" class="headerlink" title="同步本地版本库到远程"></a>同步本地版本库到远程</h2><p><code>$ git push -u origin master</code></p>
+<h2 id="克隆远程版本库到本地（在此基础上push则无须添加远程版本库）"><a href="#克隆远程版本库到本地（在此基础上push则无须添加远程版本库）" class="headerlink" title="克隆远程版本库到本地（在此基础上push则无须添加远程版本库）"></a>克隆远程版本库到本地（在此基础上push则无须添加远程版本库）</h2><p><code>$git clone &lt;URL&gt;</code>（等效于 <code>init</code>+<code>remote add</code>+<code>pull</code>）</p>
+<h2 id="新建及更换分支（本地）"><a href="#新建及更换分支（本地）" class="headerlink" title="新建及更换分支（本地）"></a>新建及更换分支（本地）</h2><p><code>$ git checkout -b &lt;branch&gt;</code></p>
+<h2 id="合并分支到目前工作分支"><a href="#合并分支到目前工作分支" class="headerlink" title="合并分支到目前工作分支"></a>合并分支到目前工作分支</h2><p><code>$ git merge &lt;branch-to-be-merged&gt;</code></p>
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><p><code>$ git reset [option] &lt;head&gt;</code> ([option]=[–soft | –hard | –mixed])</p>
+<h2 id="版本恢复（错误回退后恢复到未来版本）"><a href="#版本恢复（错误回退后恢复到未来版本）" class="headerlink" title="版本恢复（错误回退后恢复到未来版本）"></a>版本恢复（错误回退后恢复到未来版本）</h2><p><code>$ git reflog</code>查看最近版本信息+版本回退</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
