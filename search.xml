@@ -71,6 +71,14 @@
       </tags>
   </entry>
   <entry>
+    <title>python学习</title>
+    <url>/2018/11/06/python-learning/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo+github个人博客部署</title>
     <url>/2018/11/07/hexo-build/</url>
     <content><![CDATA[<h2 id="1-创建过程（windows系统）"><a href="#1-创建过程（windows系统）" class="headerlink" title="1. 创建过程（windows系统）"></a>1. 创建过程（windows系统）</h2><h3 id="前置环境及条件"><a href="#前置环境及条件" class="headerlink" title="前置环境及条件"></a>前置环境及条件</h3><ol>
@@ -124,14 +132,6 @@
 ]]></content>
       <tags>
         <tag>待分类</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python学习</title>
-    <url>/2018/11/06/python-learning/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>编程语言</tag>
       </tags>
   </entry>
 </search>
