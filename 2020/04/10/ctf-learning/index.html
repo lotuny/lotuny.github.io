@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>python学习 - Lotuny&#39;s Blog</title>
+    <title>ctf学习 - Lotuny&#39;s Blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     
-    
+    <meta name="description" content="签到题反正就是各种查看源码，看跳转的源码，flag一般在注释里。
+文件上传题这个嘛……有时候能做出来，有时候就……我觉得很灵异。先随手写些想到的东西：
+
+0x00截断 据说是服务器读取URL的时候只,"> 
     <meta name="author" content="Lotuny"> 
     <link rel="alternative" href="atom.xml" title="Lotuny&#39;s Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -35,7 +38,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://lotuny.github.io"></a>
     <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">python学习</h3>
+    <h3 class="subtitle">ctf学习</h3>
     <div class="social">
         <div>
             <div class="share">
@@ -50,16 +53,35 @@
     <div class="section">
         <div class="article">
     <div class="main">
-        <h1 class="title">python学习</h1>
+        <h1 class="title">ctf学习</h1>
         <div class="stuff">
-            <span>十一月 06, 2018</span>
+            <span>四月 10, 2020</span>
             
-  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/编程语言/">编程语言</a></li></ul>
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/待分类/">待分类</a></li></ul>
 
 
         </div>
         <div class="content markdown">
-            
+            <h2 id="签到题"><a href="#签到题" class="headerlink" title="签到题"></a>签到题</h2><p>反正就是各种查看源码，看跳转的源码，flag一般在注释里。</p>
+<h2 id="文件上传题"><a href="#文件上传题" class="headerlink" title="文件上传题"></a>文件上传题</h2><p>这个嘛……有时候能做出来，有时候就……我觉得很灵异。先随手写些想到的东西：</p>
+<ul>
+<li>0x00截断<br> 据说是服务器读取URL的时候只读到十六进制0x00的地方，所以通过抓包修改上传文件名称就可以绕过检查，为什么要抓包修改呢，我理解的是0x00并不能直接用键盘打出来。比如只允许上传图片格式，但是我们渗透要获得webshell肯定要上传脚本文件，所以example.php就上传不了，我们抓包改名为example.php(0x00).jpg前端的检查就能通过，到后端就会变成example.php了，然后输入URL访问上传的php脚本就可以运行了。但我貌似没分清客户端和服务器端，还有前后端？再说吧……</li>
+<li>压缩包上传<br> 还没学会，上传了却不会解压……</li>
+</ul>
+<h2 id="md5碰撞"><a href="#md5碰撞" class="headerlink" title="md5碰撞"></a>md5碰撞</h2><p>md5好像是一种哈希加密算法？没有仔细去了解，反正就是讲道理只能从明文得到密文，并且是一对一的关系，Umm……密码学的知识都忘光光了。反正就是说现在md5不安全了，不同的明文有可能加密成同样的密文。贴一下别人关于md5碰撞例子的文章哈哈哈<a href="https://www.jianshu.com/p/c9089fd5b1ba" target="_blank" rel="noopener">https://www.jianshu.com/p/c9089fd5b1ba</a></p>
+<h2 id="php弱类型比较"><a href="#php弱类型比较" class="headerlink" title="php弱类型比较"></a>php弱类型比较</h2><p>讲真，我还蛮讨厌各种脚本的，从JavaScript开始，我也母鸡是为什么呀。反正就是JavaScript也有弱类型，但我在学php的时候才知道这个概念（反手给自己一巴掌）。两个等号==是弱类型，三个===是强类型，反正就是强类型更安全，暂时不知道弱类型有什么用，应该是有什么妙用才留着的。</p>
+<ul>
+<li>字符串（str）– 整型（int）：字符串取开头数字和整型比较，如果开头为字母那么值为0。e.g. “324kjhuh3423sfd”==324; “sfew324fdf3”==0.</li>
+<li>布尔值（boolean）：true和任何其它类型比较结果都为真，因为不知道是在哪匆匆一瞥的结果，所以有待考究……</li>
+<li>数组（Array）：我还没搞懂？？？</li>
+</ul>
+<h2 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h2><p>这个感觉很难，只理解了最简单的一小部分。</p>
+<ul>
+<li>每次输入这个（1’ or ‘’=’ ）都没反应，感觉自己像智障……</li>
+<li><code>/*!*/</code>注释符内的命令会被mysql执行,比如<code>/*!union*/</code></li>
+</ul>
+<h2 id="python脚本编写"><a href="#python脚本编写" class="headerlink" title="python脚本编写"></a>python脚本编写</h2><p>也是只学了鸡毛蒜皮，讲道理应该专门给它开个页面。编程语言学多了我真的会乱的啊啊啊！</p>
+
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
