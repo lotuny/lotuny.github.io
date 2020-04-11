@@ -16,7 +16,7 @@
 <li><p>加密算法库：Diffie-Hellman密钥交换协议（Crypto 1.0.1）; AES对称加密（CryptoJS 2.1.3）</p>
 <p>Node.js是异步事件驱动的JavaScript运行时，所谓运行时其实就是程序的依赖库，异步事件就是指被调用的异步函数不管任务是否完成都立即返回，<br>运行的线程不被挂起继续进行下一个语句，而该异步函数完成任务后会进行回调（即通知调用的线程）。提到Node.js又不得不提一下npm (Node Package Manager)<br>,这是非常实用的node包管理器，只需要<code>npm install &lt;package-name&gt;</code>就可以把许多主流的JS依赖包下载到项目中来。</p>
 <p>Vue提供了响应式和组件化的视图组件，响应式指的是网页在移动设备端打开时可以自适应设备屏幕分辨率和尺寸，优化用户体验；组件化指的是<br>将可能重复出现的视图封装成可重复调用的自定义组件。Vue将组件写成.vue文件，并在上层页面中使用标签进行调用（e.g. 程序员写了一个名为<code>co-example.vue</code><br>的组件，调用时使用<code>&lt;co-example&gt;&lt;/co-example&gt;</code>）。Element是基于vue的ui库，说实话当时是随便找的，后来才知道是饿了么的UI，总的来说还不错吧，<br>挺多有用的小组件，颜色主题的想法我也挺喜欢的。不过一定要说的话，有一个小问题就是Layout布局中只有列间距没有行间距的参数。</p>
-<p>这个项目肯定不止用了加密算法的库，只不过信息加密是聊天系统十分重要的一点，所以这两个加密算法库就单独拿出来讲讲。我们使用了Diffie-Hellman密钥交换<br>协议和AES对称加密，其中Crypto是Node.js原生库，我们原计划用它来实现加密的整个流程，只是由于某些尚不清楚的原因，Crypto的AES相关函数无法被找到进行调用，不得以我们<br>又用了另一个加密算法库CryptoJS（<a href="https://github.com/brix/crypto-js）。又因为CryptoJS只实现了加解密算法，并没有实现Diffie-Hellman，我们最终" target="_blank" rel="noopener">https://github.com/brix/crypto-js）。又因为CryptoJS只实现了加解密算法，并没有实现Diffie-Hellman，我们最终</a><br>采用了二者共用的策略。密钥交换协议和对称加密这两者在该项目中缺一不可，具体会在后面提到。</p>
+<p>这个项目肯定不止用了加密算法的库，只不过信息加密是聊天系统十分重要的一点，所以这两个加密算法库就单独拿出来讲讲。我们使用了Diffie-Hellman密钥交换<br>协议和AES对称加密，其中Crypto是Node.js原生库，我们原计划用它来实现加密的整个流程，只是由于某些尚不清楚的原因，Crypto的AES相关函数无法被找到进行调用，不得以我们<br>又用了另一个加密算法库CryptoJS。又因为CryptoJS只实现了加解密算法，并没有实现Diffie-Hellman，我们最终<br>采用了二者共用的策略。密钥交换协议和对称加密这两者在该项目中缺一不可，具体会在后面提到。<br>Crypto算法库来自<a href="https://github.com/brix/crypto-js" target="_blank" rel="noopener">https://github.com/brix/crypto-js</a></p>
 <p>那么用户聊天内容的私密性就要进行保护。和微信不一样的是，我们的项目更强调端对端的消息加密，<br>也即服务端无法获取用户聊天内容。这个实现起来不难，但加强了隐私性也就牺牲了一定的方便性。</p>
 </li>
 </ul>
@@ -33,7 +33,7 @@
   </entry>
   <entry>
     <title>ctf学习</title>
-    <url>/2020/04/10/ctf-learning/</url>
+    <url>/2020/04/11/ctf-learning/</url>
     <content><![CDATA[<h2 id="签到题"><a href="#签到题" class="headerlink" title="签到题"></a>签到题</h2><p>反正就是各种查看源码，看跳转的源码，flag一般在注释里。</p>
 <h2 id="文件上传题"><a href="#文件上传题" class="headerlink" title="文件上传题"></a>文件上传题</h2><p>这个嘛……有时候能做出来，有时候就……我觉得很灵异。先随手写些想到的东西：</p>
 <ul>
@@ -68,14 +68,6 @@
 ]]></content>
       <tags>
         <tag>常用命令</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python学习</title>
-    <url>/2018/11/06/python-learning/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>编程语言</tag>
       </tags>
   </entry>
   <entry>
@@ -132,6 +124,14 @@
 ]]></content>
       <tags>
         <tag>待分类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python学习</title>
+    <url>/2018/11/06/python-learning/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>编程语言</tag>
       </tags>
   </entry>
 </search>
